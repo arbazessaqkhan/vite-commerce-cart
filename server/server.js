@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import seedProducts from './seedProducts.js';
 import productRoutes from './routes/productRoutes.js';
+import cartRoutes from './routes/cartRoutes.js';
 
 
 dotenv.config();
@@ -28,6 +29,7 @@ mongoose
 
 
 app.use('/api/products', productRoutes);
+app.use('/api/v1/cart', cartRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
